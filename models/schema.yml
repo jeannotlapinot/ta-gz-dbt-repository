@@ -108,3 +108,14 @@ models:
             - ads_cost
             - ads_impression
             - ads_click
+  - name: finance_campaigns_day
+    description: daily financial data includings ads margin, average basket and operational margin
+    tests:
+      - unique:
+          column_name: date_date
+      - not_null:
+          column_name:
+            - ads_margin
+            - average basket
+            - operationla_margin
+            - ads_cost
