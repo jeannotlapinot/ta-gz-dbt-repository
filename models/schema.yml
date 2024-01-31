@@ -98,3 +98,13 @@ models:
           column_name:
             - paid_source
             - campaign_name
+  - name: int_campaigns_day
+    description: data from all campaigns aggregated by day
+    tests:
+      - unique:
+          column_name: date_date
+      - not_null:
+          column_name:
+            - ads_cost
+            - ads_impression
+            - ads_click
