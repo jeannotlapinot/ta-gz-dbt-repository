@@ -7,7 +7,7 @@ SELECT orders_id
 , quantity
 , revenue - (quantity * CAST(purchase_price AS FLOAT64)) AS margin
 , quantity * CAST(purchase_price AS FLOAT64) AS purchase_cost
-, {{ margin_percent ('margin', 'revenue')}} AS margin_percent
+, {{ margin_percent ('revenue' ,'quantity * CAST(purchase_price AS FLOAT64)')}} AS margin_percent
 FROM {{ref("stg_raw__sales")}}
 JOIN 
 {{ref("stg_raw__product")}}
