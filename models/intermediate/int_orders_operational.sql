@@ -9,6 +9,7 @@ SELECT orders_id
 , SUM(revenue) AS revenue
 , SUM(quantity) AS quantity
 , SUM(margin) + SUM(shipping_fee) - SUM(logcost) - SUM(CAST(ship_cost AS FLOAT64)) AS operational_margin
+, SUM(logcost) + SUM(CAST(ship_cost AS FLOAT64)) AS operational_costs
 FROM {{ref("int_orders_margin")}}
 JOIN
 {{ref("stg_raw__ship")}}
