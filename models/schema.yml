@@ -85,6 +85,7 @@ sources:
         - name: ads_cost
         - name: impression
         - name: click
+
 models:
   - name: stg_raw__product
   - name: stg_raw__sales
