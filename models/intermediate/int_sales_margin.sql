@@ -1,7 +1,7 @@
 -- Margin = Revenue - Purchase_cost
 -- Purchase_cost = Quantity * Purchase_price
 
-SELECT orders_id
+WITH tab1 AS (SELECT orders_id
 , date_date
 , revenue
 , quantity
@@ -11,4 +11,8 @@ FROM {{ref("stg_raw__sales")}}
 JOIN 
 {{ref("stg_raw__product")}}
 USING
-(products_id)
+(products_id))
+
+SELECT *
+, {{margin_percent2('revenue', 'revenue')}}
+FROM tab1
