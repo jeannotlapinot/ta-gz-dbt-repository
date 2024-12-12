@@ -14,5 +14,5 @@ USING
 (products_id))
 
 SELECT *
-, {{margin_percent2('revenue', 'revenue')}}
+, {{margin_percent2('revenue', 'purchase_cost')}}
 FROM tab1
